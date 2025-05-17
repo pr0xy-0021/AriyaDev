@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ariya Dev Services | Professional Websites for Calgary Businesses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        
+        .example-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .mobile-menu {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-blue-600 font-bold text-xl">Ariya Dev Services</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Home</a>
+                    <a href="#examples" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Examples</a>
+                    <about href="#about" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Contact</a>
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition duration-300">Get Free Sample</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Home</a>
+                <a href="#examples" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Examples</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">About</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                <a href="#contact" class="block bg-blue-600 text-white px-4 py-2 rounded-md font-medium text-center mt-2">Get Free Sample</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Professional Websites for Calgary Businesses</h1>
+                    <p class="text-xl mb-8 text-blue-100">We help local businesses establish their online presence with beautiful, fast, and mobile-friendly websites that attract more customers.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-md font-bold text-center transition duration-300">Get Your Free Sample Website</a>
+                        <a href="#examples" class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 py-3 rounded-md font-bold text-center transition duration-300">See Examples</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -top-6 -left-6 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                        <div class="absolute -bottom-8 -right-8 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                        <div class="relative bg-white rounded-xl shadow-2xl overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Website mockup" class="w-full h-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">What Your Business Website Will Include</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Modern websites designed to help you grow your business</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-lg text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-mobile-alt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Mobile-Friendly</h3>
+                    <p class="text-gray-600">Your website will look great and work perfectly on all devices, from smartphones to desktops.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bolt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Fast Loading</h3>
+                    <p class="text-gray-600">Optimized for speed so visitors don't leave before seeing what you offer.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-chart-line text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">SEO Ready</h3>
+                    <p class="text-gray-600">Built to help you rank higher in search results and attract more local customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section id="examples" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Industry-Specific Website Examples</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">See how a professional website can help your specific business</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Barbershop -->
+                <div onclick="location.href='Barber.html'" class="bg-white rounded-lg overflow-hidden shadow-md example-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbershop website" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Barbershops</h3>
+                        <p class="text-gray-600 mb-4">Showcase your work with a gallery, enable online booking, and display your services with prices.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Online Booking</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Service Menu</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Gallery</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Nail Salon -->
+                <div onclick="location.href='salon.html'" class="bg-white rounded-lg overflow-hidden shadow-md example-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Nail salon website" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Nail & Beauty Salons</h3>
+                        <p class="text-gray-600 mb-4">Display your nail art portfolio, offer gift certificates, and let clients book appointments online.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Portfolio</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Gift Cards</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Promotions</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Auto Repair -->
+                <div onclick="location.href='Auto.html'" class="bg-white rounded-lg overflow-hidden shadow-md example-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Auto repair website" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Auto Repair Shops</h3>
+                        <p class="text-gray-600 mb-4">List your services, show customer testimonials, and allow appointment scheduling for oil changes and repairs.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Service List</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Testimonials</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Appointments</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Restaurant -->
+                <div onclick="location.href='resturant.html'" class="bg-white rounded-lg overflow-hidden shadow-md example-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Restaurant website" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Restaurants & Cafés</h3>
+                        <p class="text-gray-600 mb-4">Feature your menu with photos, take online reservations, and showcase your location and hours.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Online Menu</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Reservations</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Gallery</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Personal Trainer -->
+                <div onclick="location.href='PersonalT.html'" class="bg-white rounded-lg overflow-hidden shadow-md example-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Personal trainer website" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Personal Trainers</h3>
+                        <p class="text-gray-600 mb-4">Show your training philosophy, client success stories, and allow booking for sessions or classes.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Success Stories</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Session Booking</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Programs</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Plumber -->
+                <div onclick="location.href='plumelc.html'" class="bg-white rounded-lg overflow-hidden shadow-md example-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1610312973684-e47446aa260b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Plumber website" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Plumbers & Electricians</h3>
+                        <p class="text-gray-600 mb-4">Highlight your services, emergency contact info, and service areas with a professional online presence.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">24/7 Service</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Service Areas</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Certifications</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Real Estate -->
+                <div onclick="location.href='Reelstate.html'" class="bg-white rounded-lg overflow-hidden shadow-md example-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="Real estate website" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Real Estate Agents</h3>
+                        <p class="text-gray-600 mb-4">Showcase your listings, client testimonials, and neighborhood guides to build trust with potential clients.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Property Listings</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Testimonials</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Neighborhood Guides</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Real Estate -->
+                <div onclick="location.href='Reelstate.html'" class="bg-white rounded-lg overflow-hidden shadow-md example-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560165143-fa7e2d9e594c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dGVjaCUyMHJlcGFpcnxlbnwwfHwwfHx8MA%3D%3D">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Tech Repair Businesse</h3>
+                        <p class="text-gray-600 mb-4">with repair pricing, appointment booking, and service area map</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Property Listings</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Testimonials</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Neighborhood Guides</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tutor -->
+                <div onclick="location.href='Education.html'" class="bg-white rounded-lg overflow-hidden shadow-md example-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Tutor website" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Tutors / Education</h3>
+                        <p class="text-gray-600 mb-4">Display your qualifications, teaching approach, and allow students to book sessions or download resources.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3px-3 py-1 rounded-full">Qualifications</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Session Booking</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Resources</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">About Ariya Dev Services</h2>
+                <p class="text-lg text-gray-600 mb-8 max-w-4xl mx-auto">We are a Calgary-based web development team with over 5 years of experience helping local businesses establish their online presence. We understand the unique needs of small businesses and create websites that are not just beautiful, but also effective at attracting and converting customers.</p>
+                <p class="text-lg text-gray-600 mb-8 max-w-4xl mx-auto">Our approach is simple: we listen to your needs, understand your business, and create a website that truly represents your brand while helping you achieve your business goals.</p>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-map-marker-alt text-blue-600"></i>
+                        </div>
+                        <span class="text-gray-700">Serving Calgary & Area</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-laptop-code text-blue-600"></i>
+                        </div>
+                        <span class="text-gray-700">100+ Websites Built</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-users text-blue-600"></i>
+                        </div>
+                        <span class="text-gray-700">Dedicated Team of Experts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Don't just take our word for it - hear from business owners we've worked with</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Sarah" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Sarah K.</h4>
+                            <p class="text-sm text-gray-600">Owner, The Cutting Edge Barbershop</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Ariya Dev Services built us an amazing website that lets customers book appointments online. Our bookings increased by 40% within the first month!"</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80" alt="Mike" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Mike T.</h4>
+                            <p class="text-sm text-gray-600">Owner, M&T Auto Repair</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Our old website was outdated and didn't work on phones. Ariya Dev Services created a modern site that shows up in local searches and brings us new customers daily."</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1387&q=80" alt="Lisa" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Lisa P.</h4>
+                            <p class="text-sm text-gray-600">Owner, Bella Nails & Spa</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"I was hesitant about getting a website, but Ariya Dev Services made the process so easy. Now we get online bookings even when we're closed, and our gift card sales have doubled."</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Grow Your Business Online?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Get your free sample website to see what we can create for your business - no obligation, no pressure.</p>
+            <a href="#contact" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-md font-bold text-lg inline-block transition duration-300">Get Your Free Sample Website</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Let's Build Your Website</h2>
+                    <p class="text-lg text-gray-600 mb-8">Fill out the form and we'll get back to you within 24 hours to discuss your project. You'll also receive a free sample website mockup based on your business type.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Email Us</h4>
+                                <p class="text-gray-600">hello@ariyadevservices.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Call Us</h4>
+                                <p class="text-gray-600">(403) 555-1234</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Location</h4>
+                                <p class="text-gray-600">Serving Calgary and surrounding areas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="John Smith">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="john@example.com">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="(403) 555-1234">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="business" class="block text-gray-700 font-medium mb-2">Business Type</label>
+                            <select id="business" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select your business type</option>
+                                <option value="barbershop">Barbershop</option>
+                                <option value="salon">Nail & Beauty Salon</option>
+                                <option value="auto">Auto Repair Shop</option>
+                                <option value="restaurant">Restaurant or Café</option>
+                                <option value="trainer">Personal Trainer</option>
+                                <option value="trades">Plumber or Electrician</option>
+                                <option value="realestate">Real Estate Agent</option>
+                                <option value="tutor">Tutor / Education Service</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Tell Us About Your Project</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="What kind of website do you need?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition duration-300">Get My Free Sample Website</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-bold mb-4">Ariya Dev Services</h3>
+                    <p class="text-gray-400">Professional website design and development services for Calgary businesses. Helping local businesses grow through effective online presence.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#examples" class="text-gray-400 hover:text-white transition duration-300">Examples</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <p class="text-gray-400 mt-4">hello@ariyadevservices.com</p>
+                    <p class="text-gray-400">(403) 555-1234</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 Ariya Dev Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

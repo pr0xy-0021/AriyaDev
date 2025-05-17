@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduMentor - Find Your Perfect Tutor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .tutor-card:hover {
+            transform: scale(1.03);
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            background-color: #f8f9fa;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #667eea;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .search-box {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-chalkboard-teacher text-2xl text-indigo-600"></i>
+                <span class="text-xl font-bold text-indigo-600">Edu<span class="text-purple-600">Mentor</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="nav-link text-gray-700 hover:text-indigo-600">Home</a>
+                <a href="#" class="nav-link text-gray-700 hover:text-indigo-600">Find Tutors</a>
+                <a href="#" class="nav-link text-gray-700 hover:text-indigo-600">Subjects</a>
+                <a href="#" class="nav-link text-gray-700 hover:text-indigo-600">Pricing</a>
+                <a href="#" class="nav-link text-gray-700 hover:text-indigo-600">About</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="px-4 py-2 text-indigo-600 font-medium rounded-lg hover:bg-indigo-50">Login</button>
+                <button class="px-4 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition">Sign Up</button>
+                <button class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Find the Perfect Tutor for Your Learning Journey</h1>
+                <p class="text-xl mb-8 opacity-90">Personalized 1-on-1 tutoring sessions with certified experts in 100+ subjects. Achieve your academic goals with our tailored approach.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="px-6 py-3 bg-white text-indigo-600 font-bold rounded-lg hover:bg-gray-100 transition">Find a Tutor</button>
+                    <button class="px-6 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-indigo-600 transition">How It Works</button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tutoring session" class="rounded-xl shadow-2xl max-w-md w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="bg-gray-50 py-12 -mt-8">
+        <div class="container mx-auto px-4">
+            <div class="search-box bg-white rounded-xl p-6 max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold mb-6 text-center">What would you like to learn today?</h2>
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="flex-1">
+                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="">Select Subject</option>
+                            <option value="math">Mathematics</option>
+                            <option value="science">Science</option>
+                            <option value="english">English</option>
+                            <option value="history">History</option>
+                            <option value="programming">Programming</option>
+                        </select>
+                    </div>
+                    <div class="flex-1">
+                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="">Select Level</option>
+                            <option value="elementary">Elementary School</option>
+                            <option value="middle">Middle School</option>
+                            <option value="high">High School</option>
+                            <option value="college">College</option>
+                            <option value="adult">Adult Learning</option>
+                        </select>
+                    </div>
+                    <button class="px-6 py-3 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition">
+                        <i class="fas fa-search mr-2"></i> Search Tutors
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Subjects -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Popular Subjects</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Browse our most requested subjects and find the perfect tutor for your needs</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Subject Card 1 -->
+                <div class="subject-card bg-white rounded-xl p-6 shadow-md border border-gray-100 transition cursor-pointer">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-square-root-alt text-3xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Mathematics</h3>
+                    <p class="text-gray-600 mb-4">From algebra to calculus, our tutors make math understandable.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">250+ tutors</span>
+                        <button class="text-indigo-600 hover:text-indigo-800">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Subject Card 2 -->
+                <div class="subject-card bg-white rounded-xl p-6 shadow-md border border-gray-100 transition cursor-pointer">
+                    <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-flask text-3xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Science</h3>
+                    <p class="text-gray-600 mb-4">Biology, chemistry, physics - explore the wonders of science.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">180+ tutors</span>
+                        <button class="text-purple-600 hover:text-purple-800">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Subject Card 3 -->
+                <div class="subject-card bg-white rounded-xl p-6 shadow-md border border-gray-100 transition cursor-pointer">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-code text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Programming</h3>
+                    <p class="text-gray-600 mb-4">Learn Python, JavaScript, Java and more from industry experts.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">320+ tutors</span>
+                        <button class="text-blue-600 hover:text-blue-800">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Subject Card 4 -->
+                <div class="subject-card bg-white rounded-xl p-6 shadow-md border border-gray-100 transition cursor-pointer">
+                    <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-language text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Languages</h3>
+                    <p class="text-gray-600 mb-4">Spanish, French, Mandarin - become fluent with native speakers.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">210+ tutors</span>
+                        <button class="text-green-600 hover:text-green-800">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <button class="px-6 py-3 border-2 border-indigo-600 text-indigo-600 font-bold rounded-lg hover:bg-indigo-50 transition">
+                    View All Subjects <i class="fas fa-chevron-down ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Tutors -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Featured Tutors</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Meet some of our top-rated educators with proven track records</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tutor Card 1 -->
+                <div class="tutor-card bg-white rounded-xl overflow-hidden shadow-lg transition">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib" alt="Tutor" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span class="font-bold">4.9</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold">Dr. Sarah Johnson</h3>
+                                <p class="text-gray-600">Mathematics Professor</p>
+                            </div>
+                            <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">PhD</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">15+ years experience teaching calculus and linear algebra at university level.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Calculus</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Algebra</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Statistics</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-indigo-600">$85/hr</span>
+                            <button class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tutor Card 2 -->
+                <div class="tutor-card bg-white rounded-xl overflow-hidden shadow-lg transition">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Tutor" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span class="font-bold">4.8</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold">Michael Chen</h3>
+                                <p class="text-gray-600">Computer Science Expert</p>
+                            </div>
+                            <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">MSc</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">Former Google engineer with passion for teaching programming fundamentals.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Algorithms</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-purple-600">$75/hr</span>
+                            <button class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tutor Card 3 -->
+                <div class="tutor-card bg-white rounded-xl overflow-hidden shadow-lg transition">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Tutor" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span class="font-bold">5.0</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold">Emily Rodriguez</h3>
+                                <p class="text-gray-600">Language Specialist</p>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Native</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">Bilingual educator with 10 years experience teaching Spanish and ESL.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Spanish</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">ESL</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">TOEFL Prep</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-green-600">$65/hr</span>
+                            <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <button class="px-6 py-3 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition">
+                    View All Tutors <i class="fas fa-chevron-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">How EduMentor Works</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Simple steps to start learning with your perfect tutor</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center p-6 rounded-xl bg-gray-50">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-indigo-600">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Find Your Tutor</h3>
+                    <p class="text-gray-600">Browse profiles, read reviews, and select the tutor that matches your learning style and goals.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="text-center p-6 rounded-xl bg-gray-50">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Schedule Sessions</h3>
+                    <p class="text-gray-600">Choose a convenient time and book your first session with just a few clicks.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="text-center p-6 rounded-xl bg-gray-50">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-blue-600">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Start Learning</h3>
+                    <p class="text-gray-600">Connect via our virtual classroom or in-person and begin your personalized learning journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-indigo-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Success Stories</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Hear from students who transformed their learning with EduMentor</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Student" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold">Jessica Thompson</h4>
+                            <p class="text-gray-600">High School Student</p>
+                            <div class="flex mt-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"I was struggling with calculus and about to give up when I found Dr. Johnson on EduMentor. Her patient explanations and real-world examples made everything click. I went from a D to an A in just 3 months!"</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1542178243-bc20204b769f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Student" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold">David Kim</h4>
+                            <p class="text-gray-600">College Freshman</p>
+                            <div class="flex mt-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Michael's programming lessons were game-changing. His industry experience gave me practical insights no textbook could. Thanks to his guidance, I landed my first internship as a sophomore!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-indigo-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Learning?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Join thousands of students who are achieving their academic goals with personalized tutoring.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <button class="px-8 py-4 bg-white text-indigo-600 font-bold rounded-lg hover:bg-gray-100 transition text-lg">Find Your Tutor</button>
+                <button class="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-indigo-600 transition text-lg">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Column 1 -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-chalkboard-teacher text-2xl text-indigo-400"></i>
+                        <span class="text-xl font-bold text-indigo-400">Edu<span class="text-purple-400">Mentor</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Empowering students through personalized education since 2015.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Tutors</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Subjects</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on new tutors and learning tips.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button class="px-4 py-2 bg-indigo-600 rounded-r-lg hover:bg-indigo-700 transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2023 EduMentor. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-indigo-600 text-white w-12 h-12 rounded-full shadow-lg hover:bg-indigo-700 transition hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile Menu Toggle (would need actual implementation)
+        const mobileMenuButton = document.querySelector('.md\\:hidden');
+        mobileMenuButton.addEventListener('click', () => {
+            alert('Mobile menu would open here in a full implementation');
+        });
+
+        // Subject card click handler
+        const subjectCards = document.querySelectorAll('.subject-card');
+        subjectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                // In a real implementation, this would navigate to the subject page
+                alert('Navigating to subject: ' + card.querySelector('h3').textContent);
+            });
+        });
+
+        // Tutor card click handler
+        const tutorCards = document.querySelectorAll('.tutor-card');
+        tutorCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                // Don't navigate if clicking on the Book Now button
+                if (!e.target.closest('button')) {
+                    // In a real implementation, this would navigate to the tutor's profile
+                    alert('Viewing tutor profile: ' + card.querySelector('h3').textContent);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

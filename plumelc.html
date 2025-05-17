@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProFix Solutions | Expert Plumbers & Electricians</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        dark: '#1F2937',
+                        light: '#F9FAFB',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom CSS for animations and effects */
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #3B82F6;
+            transition: width .3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header with Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="bg-primary p-2 rounded-lg mr-3">
+                    <i class="fas fa-tools text-white text-2xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-dark">Pro<span class="text-primary">Fix</span> Solutions</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-dark hover:text-primary font-medium">Home</a>
+                <a href="#services" class="nav-link text-dark hover:text-primary font-medium">Services</a>
+                <a href="#about" class="nav-link text-dark hover:text-primary font-medium">About</a>
+                <a href="#testimonials" class="nav-link text-dark hover:text-primary font-medium">Testimonials</a>
+                <a href="#contact" class="nav-link text-dark hover:text-primary font-medium">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="tel:+1234567890" class="bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition duration-300">
+                    <i class="fas fa-phone mr-2"></i> Call Now
+                </a>
+                <button id="mobile-menu-button" class="md:hidden text-dark">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#home" class="text-dark hover:text-primary font-medium py-2">Home</a>
+                <a href="#services" class="text-dark hover:text-primary font-medium py-2">Services</a>
+                <a href="#about" class="text-dark hover:text-primary font-medium py-2">About</a>
+                <a href="#testimonials" class="text-dark hover:text-primary font-medium py-2">Testimonials</a>
+                <a href="#contact" class="text-dark hover:text-primary font-medium py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-blue-50 to-green-50 py-16 md:py-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="text-4xl md:text-5xl font-bold text-dark mb-4">24/7 Emergency <span class="text-primary">Plumbing</span> & <span class="text-secondary">Electrical</span> Services</h2>
+                <p class="text-gray-600 text-lg mb-8">Fast, reliable, and professional solutions for all your home service needs. Available round the clock for emergencies.</p>
+                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                    <a href="tel:+1234567890" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium text-center transition duration-300">
+                        <i class="fas fa-phone mr-2"></i> Call Now
+                    </a>
+                    <a href="#contact" class="bg-white hover:bg-gray-100 text-dark border border-gray-300 px-6 py-3 rounded-lg font-medium text-center transition duration-300">
+                        <i class="fas fa-envelope mr-2"></i> Get a Quote
+                    </a>
+                </div>
+                <div class="mt-8 flex items-center">
+                    <div class="flex -space-x-2">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Customer">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Customer">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Customer">
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm text-gray-600">Trusted by <span class="font-bold">500+</span> happy customers</p>
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="text-gray-600 ml-2">5.0 (120 reviews)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Plumber at work" class="rounded-lg shadow-xl w-full">
+                <div class="absolute -bottom-5 -left-5 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+                    <div class="flex items-center">
+                        <div class="bg-primary p-3 rounded-full mr-3">
+                            <i class="fas fa-check text-white"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-dark">Certified Professionals</p>
+                            <p class="text-sm text-gray-600">Licensed & Insured</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark mb-3">Our Professional Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive solutions for all your plumbing and electrical needs with guaranteed satisfaction.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Plumbing Services -->
+                <div class="bg-light rounded-xl p-6 service-card transition duration-300">
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-faucet text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Plumbing Services</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i> Leak detection & repair
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i> Pipe installation & repair
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i> Water heater services
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i> Drain cleaning
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i> Toilet & faucet repair
+                        </li>
+                    </ul>
+                    <a href="#contact" class="mt-4 inline-block text-primary font-medium hover:underline">
+                        Learn more <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <!-- Electrical Services -->
+                <div class="bg-light rounded-xl p-6 service-card transition duration-300">
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-bolt text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Electrical Services</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i> Wiring & rewiring
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i> Panel upgrades
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i> Lighting installation
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i> Outlet & switch repair
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i> Circuit breaker services
+                        </li>
+                    </ul>
+                    <a href="#contact" class="mt-4 inline-block text-primary font-medium hover:underline">
+                        Learn more <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <!-- Emergency Services -->
+                <div class="bg-light rounded-xl p-6 service-card transition duration-300">
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-exclamation-triangle text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">24/7 Emergency Services</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i> Burst pipe emergencies
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i> Power outage solutions
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i> Electrical hazards
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i> Sewage backups
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i> Gas leak detection
+                        </li>
+                    </ul>
+                    <a href="tel:+1234567890" class="mt-4 inline-flex items-center bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition duration-300 pulse-animation">
+                        <i class="fas fa-phone mr-2"></i> Emergency Call
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-50 to-green-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark mb-3">Why Choose ProFix Solutions?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We go above and beyond to ensure your complete satisfaction with every service.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-award text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-2">Certified Professionals</h3>
+                    <p class="text-gray-600">All our technicians are licensed, insured, and background checked.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-2">24/7 Availability</h3>
+                    <p class="text-gray-600">We're available round the clock for all your emergency needs.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-dollar-sign text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-2">Upfront Pricing</h3>
+                    <p class="text-gray-600">No hidden fees - we provide transparent pricing before any work begins.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-2">100% Satisfaction</h3>
+                    <p class="text-gray-600">We guarantee our work and stand behind every service we provide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Our team" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-dark mb-6">About ProFix Solutions</h2>
+                    <p class="text-gray-600 mb-4">Founded in 2010, ProFix Solutions has been serving the community with top-quality plumbing and electrical services for over a decade. What started as a small family business has grown into one of the most trusted names in home services.</p>
+                    <p class="text-gray-600 mb-6">Our mission is simple: to provide reliable, affordable, and professional services with a commitment to customer satisfaction that's second to none.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4 mt-1">
+                                <i class="fas fa-check text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">Experienced Team</h4>
+                                <p class="text-gray-600">Our technicians average 10+ years of experience in their respective fields.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4 mt-1">
+                                <i class="fas fa-check text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">Quality Materials</h4>
+                                <p class="text-gray-600">We use only premium-grade materials from trusted manufacturers.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4 mt-1">
+                                <i class="fas fa-check text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">Community Focused</h4>
+                                <p class="text-gray-600">We're proud to support local charities and community initiatives.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <div class="bg-light px-6 py-3 rounded-lg">
+                            <p class="text-3xl font-bold text-primary">13+</p>
+                            <p class="text-gray-600">Years Experience</p>
+                        </div>
+                        <div class="bg-light px-6 py-3 rounded-lg">
+                            <p class="text-3xl font-bold text-primary">2,500+</p>
+                            <p class="text-gray-600">Projects Completed</p>
+                        </div>
+                        <div class="bg-light px-6 py-3 rounded-lg">
+                            <p class="text-3xl font-bold text-primary">98%</p>
+                            <p class="text-gray-600">Customer Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark mb-3">What Our Customers Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear from our satisfied customers.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah J." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-dark">Sarah J.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"ProFix saved us from a major plumbing disaster when our pipes burst at 2 AM. Their technician arrived within 30 minutes and had the situation under control quickly. Professional, courteous, and reasonably priced."</p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i> June 15, 2023
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Michael T." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-dark">Michael T.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"The electrician from ProFix completely rewired our older home. They were meticulous, cleaned up after themselves every day, and finished ahead of schedule. I'll never use anyone else for electrical work."</p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i> April 3, 2023
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Lisa M." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-dark">Lisa M.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"I've used ProFix for both plumbing and electrical issues over the years. They're consistently professional, honest about what needs to be done, and their prices are fair. Highly recommend their services!"</p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i> May 22, 2023
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+                    View more testimonials <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Banner -->
+    <section class="bg-red-600 text-white py-6">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center mb-4 md:mb-0">
+                <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                    <i class="fas fa-exclamation-triangle text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold">24/7 Emergency Services Available</h3>
+            </div>
+            <a href="tel:+1234567890" class="bg-white hover:bg-gray-100 text-red-600 px-6 py-2 rounded-lg font-bold flex items-center transition duration-300">
+                <i class="fas fa-phone mr-2"></i> CALL NOW: (123) 456-7890
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <h2 class="text-3xl font-bold text-dark mb-6">Contact ProFix Solutions</h2>
+                    <p class="text-gray-600 mb-8">Ready to schedule a service or have questions? Fill out the form and we'll get back to you within 24 hours. For immediate assistance, please call us directly.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">Our Location</h4>
+                                <p class="text-gray-600">123 Service Lane, Suite 100<br>Your City, ST 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">Phone Numbers</h4>
+                                <p class="text-gray-600">Office: (123) 456-7890<br>Emergency: (123) 987-6543</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">Email Us</h4>
+                                <p class="text-gray-600">info@profxsolutions.com<br>support@profxsolutions.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">Business Hours</h4>
+                                <p class="text-gray-600">Monday - Friday: 8AM - 6PM<br>Saturday: 9AM - 4PM<br>Sunday: Emergency Only</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold text-dark mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-100 hover:bg-primary hover:text-white p-3 rounded-full text-gray-600 transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-primary hover:text-white p-3 rounded-full text-gray-600 transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-primary hover:text-white p-3 rounded-full text-gray-600 transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-primary hover:text-white p-3 rounded-full text-gray-600 transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <h3 class="text-2xl font-bold text-dark mb-6">Get a Free Quote</h3>
+                        <form id="contactForm" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition duration-300" required>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition duration-300" required>
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition duration-300" required>
+                            </div>
+                            
+                            <div>
+                                <label for="service" class="block text-gray-700 font-medium mb-2">Service Needed</label>
+                                <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition duration-300" required>
+                                    <option value="">Select a service</option>
+                                    <option value="plumbing">Plumbing</option>
+                                    <option value="electrical">Electrical</option>
+                                    <option value="emergency">Emergency Service</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition duration-300" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                                Submit Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-dark mb-3">Our Service Area</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We proudly serve the following cities and surrounding areas.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                    <i class="fas fa-map-marker-alt text-primary text-2xl mb-2"></i>
+                    <p class="font-medium">Your City</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                    <i class="fas fa-map-marker-alt text-primary text-2xl mb-2"></i>
+                    <p class="font-medium">Neighboring Town</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                    <i class="fas fa-map-marker-alt text-primary text-2xl mb-2"></i>
+                    <p class="font-medium">Suburb West</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                    <i class="fas fa-map-marker-alt text-primary text-2xl mb-2"></i>
+                    <p class="font-medium">Suburb East</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                    <i class="fas fa-map-marker-alt text-primary text-2xl mb-2"></i>
+                    <p class="font-medium">Rural County</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-12 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+            <p class="max-w-2xl mx-auto mb-8">Subscribe to our newsletter for maintenance tips, special offers, and company news.</p>
+            
+            <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg focus:outline-none text-dark">
+                <button type="submit" class="bg-white hover:bg-gray-100 text-primary px-6 py-3 rounded-lg font-medium transition duration-300">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary p-2 rounded-lg mr-3">
+                            <i class="fas fa-tools text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Pro<span class="text-primary">Fix</span> Solutions</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Your trusted partner for all plumbing and electrical needs since 2010.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition duration-300">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Plumbing Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Electrical Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Emergency Repairs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Maintenance Plans</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Commercial Services</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                            <span>123 Service Lane, Suite 100<br>Your City, ST 12345</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-primary"></i>
+                            <span>(123) 456-7890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-primary"></i>
+                            <span>info@profxsolutions.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 ProFix Solutions. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-primary hover:bg-blue-700 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send this data to your server
+            // For demo purposes, we'll just show an alert
+            alert(`Thank you, ${name}! Your ${service} request has been received. We'll contact you shortly at ${email} or ${phone}.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>

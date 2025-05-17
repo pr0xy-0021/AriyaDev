@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeHomes | Luxury Real Estate Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+        }
+        
+        .property-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .search-dropdown {
+            display: none;
+        }
+        
+        .search-input:focus + .search-dropdown {
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-home text-blue-600 text-3xl mr-2"></i>
+                        <span class="text-2xl font-bold text-blue-600">PrimeHomes</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-800 hover:text-blue-600 font-medium">Home</a>
+                    <a href="#properties" class="text-gray-800 hover:text-blue-600 font-medium">Properties</a>
+                    <a href="#services" class="text-gray-800 hover:text-blue-600 font-medium">Services</a>
+                    <a href="#about" class="text-gray-800 hover:text-blue-600 font-medium">About</a>
+                    <a href="#contact" class="text-gray-800 hover:text-blue-600 font-medium">Contact</a>
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300">
+                        <i class="fas fa-phone-alt mr-2"></i> (555) 123-4567
+                    </button>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <svg class="w-6 h-6 text-gray-800" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="hidden mobile-menu bg-white">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 text-gray-800 hover:text-blue-600">Home</a>
+                <a href="#properties" class="block px-3 py-2 text-gray-800 hover:text-blue-600">Properties</a>
+                <a href="#services" class="block px-3 py-2 text-gray-800 hover:text-blue-600">Services</a>
+                <a href="#about" class="block px-3 py-2 text-gray-800 hover:text-blue-600">About</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-800 hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero flex items-center justify-center text-white">
+        <div class="text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Find Your Dream Home Today</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">We specialize in luxury properties and exceptional service to help you find the perfect home.</p>
+            
+            <div class="relative max-w-2xl mx-auto">
+                <input type="text" placeholder="Search by city, neighborhood or ZIP..." class="search-input w-full px-6 py-4 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button class="absolute right-2 top-2 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300">Search</button>
+                
+                <div class="search-dropdown absolute w-full mt-2 bg-white rounded-lg shadow-lg z-10">
+                    <div class="p-4">
+                        <h3 class="font-bold text-gray-800 mb-2">Popular Searches</h3>
+                        <ul>
+                            <li class="py-2 px-2 hover:bg-gray-100 cursor-pointer rounded">Waterfront properties</li>
+                            <li class="py-2 px-2 hover:bg-gray-100 cursor-pointer rounded">Luxury condos</li>
+                            <li class="py-2 px-2 hover:bg-gray-100 cursor-pointer rounded">Gated communities</li>
+                            <li class="py-2 px-2 hover:bg-gray-100 cursor-pointer rounded">Historic homes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section id="properties" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Featured Properties</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore our hand-picked selection of premium properties in the most desirable locations.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Property 1 -->
+                <div class="property-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Luxury Villa" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">New Listing</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Modern Luxury Villa</h3>
+                            <span class="text-blue-600 font-bold">$1,250,000</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">123 Palm Beach Drive, Miami, FL</p>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <div class="flex items-center mr-4">
+                                <i class="fas fa-bed mr-1"></i>
+                                <span>4 Beds</span>
+                            </div>
+                            <div class="flex items-center mr-4">
+                                <i class="fas fa-bath mr-1"></i>
+                                <span>3 Baths</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-ruler-combined mr-1"></i>
+                                <span>3,200 sqft</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-300">View Details</button>
+                    </div>
+                </div>
+                
+                <!-- Property 2 -->
+                <div class="property-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Downtown Condo" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">For Rent</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Downtown Penthouse</h3>
+                            <span class="text-blue-600 font-bold">$4,500/mo</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">456 Skyline Blvd, New York, NY</p>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <div class="flex items-center mr-4">
+                                <i class="fas fa-bed mr-1"></i>
+                                <span>2 Beds</span>
+                            </div>
+                            <div class="flex items-center mr-4">
+                                <i class="fas fa-bath mr-1"></i>
+                                <span>2 Baths</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-ruler-combined mr-1"></i>
+                                <span>1,800 sqft</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-300">View Details</button>
+                    </div>
+                </div>
+                
+                <!-- Property 3 -->
+                <div class="property-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Suburban Home" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">Sold</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Suburban Family Home</h3>
+                            <span class="text-blue-600 font-bold">$750,000</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">789 Maple Street, Austin, TX</p>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <div class="flex items-center mr-4">
+                                <i class="fas fa-bed mr-1"></i>
+                                <span>5 Beds</span>
+                            </div>
+                            <div class="flex items-center mr-4">
+                                <i class="fas fa-bath mr-1"></i>
+                                <span>3.5 Baths</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-ruler-combined mr-1"></i>
+                                <span>3,800 sqft</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-gray-300 text-gray-800 py-2 rounded cursor-not-allowed">Sold Out</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-white border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full hover:bg-blue-600 hover:text-white transition duration-300 font-medium">
+                    View All Properties <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive real estate services tailored to your needs.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-home text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Home Buying</h3>
+                    <p class="text-gray-600">We'll guide you through the entire home buying process, from search to closing, ensuring you find the perfect property.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-sign text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Home Selling</h3>
+                    <p class="text-gray-600">Maximize your home's value with our strategic marketing, professional staging, and expert negotiation services.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-building text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Property Management</h3>
+                    <p class="text-gray-600">Comprehensive property management services for landlords, including tenant screening, maintenance, and rent collection.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <!-- Service 4 -->
+                <div class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-search-dollar text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Investment Properties</h3>
+                    <p class="text-gray-600">Identify high-return investment opportunities with our market analysis and property evaluation expertise.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-file-signature text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Relocation Services</h3>
+                    <p class="text-gray-600">Smooth transition services for corporate relocations, including area orientation and school district information.</p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-hand-holding-usd text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Mortgage Assistance</h3>
+                    <p class="text-gray-600">Connect with trusted lenders and get guidance on mortgage options to make your home purchase affordable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Real Estate Agent" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">About Our Agency</h2>
+                    <p class="text-gray-600 mb-4">PrimeHomes Real Estate was founded in 2010 with a mission to provide exceptional service in the luxury real estate market. Our team of experienced agents brings together decades of combined experience, market knowledge, and negotiation expertise.</p>
+                    <p class="text-gray-600 mb-6">We pride ourselves on our personalized approach, treating each client as our only client. Whether you're buying, selling, or investing, we'll be with you every step of the way to ensure a smooth and successful transaction.</p>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-trophy text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Top Producer Award</h4>
+                            <p class="text-gray-600">Recognized as top 1% of realtors in the state</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-star text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">5-Star Reviews</h4>
+                            <p class="text-gray-600">Consistently rated 5 stars by our clients</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-home text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Local Experts</h4>
+                            <p class="text-gray-600">Deep knowledge of neighborhoods and market trends</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">What Our Clients Say</h2>
+                <p class="max-w-2xl mx-auto opacity-90">Hear from homeowners who found their dream homes with our help.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white text-gray-800 p-8 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6">"Working with PrimeHomes was an absolute pleasure. They understood exactly what we were looking for and found us our dream home within two weeks. Their negotiation skills saved us over $50,000!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-gray-600 text-sm">Homebuyer, Miami</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white text-gray-800 p-8 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6">"Our condo sold for 15% above asking price in just 3 days thanks to PrimeHomes' marketing strategy. Their professional photography and virtual tour made all the difference."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-gray-600 text-sm">Home Seller, New York</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white text-gray-800 p-8 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6">"As an international investor, I needed someone who understood the local market and could handle everything remotely. PrimeHomes made the process seamless from start to finish."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Elena Rodriguez" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Elena Rodriguez</h4>
+                            <p class="text-gray-600 text-sm">Investor, London</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Contact Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Ready to start your real estate journey? Get in touch with us today.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Get In Touch</h3>
+                        
+                        <form id="contactForm">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 mb-2">Phone</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="form-checkbox">
+                                    <span class="ml-2 text-gray-700">I'm interested in buying a property</span>
+                                </label>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="form-checkbox">
+                                    <span class="ml-2 text-gray-700">I'm interested in selling a property</span>
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300 font-medium">
+                                Send Message <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Our Information</h3>
+                        
+                        <div class="mb-8">
+                            <h4 class="font-bold text-gray-800 mb-2">Office Address</h4>
+                            <p class="text-gray-600">123 Real Estate Avenue, Suite 500<br>Miami, FL 33101</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="font-bold text-gray-800 mb-2">Contact Details</h4>
+                            <p class="text-gray-600 mb-2"><i class="fas fa-phone-alt mr-2 text-blue-600"></i> (555) 123-4567</p>
+                            <p class="text-gray-600 mb-2"><i class="fas fa-envelope mr-2 text-blue-600"></i> info@primehomes.com</p>
+                            <p class="text-gray-600"><i class="fas fa-clock mr-2 text-blue-600"></i> Mon-Fri: 9am-6pm, Sat: 10am-4pm</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-700 transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-500 transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-pink-700 transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-blue-700 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-800 transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.210467325833!2d-80.1913079242666!3d25.76161567746643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6823bcf83f7%3A0xef0b288e10c254e3!2sMiami%20Downtown%2C%20Miami%2C%20FL!5e0!3m2!1sen!2sus!4v1689870432533!5m2!1sen!2sus" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-12 bg-blue-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+            <p class="mb-6 max-w-2xl mx-auto opacity-90">Get the latest property listings, market updates, and real estate tips delivered to your inbox.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center max-w-md mx-auto">
+                <input type="email" placeholder="Your email address" class="px-4 py-3 rounded-l-full sm:rounded-r-none rounded-r-full sm:w-2/3 focus:outline-none text-gray-800">
+                <button class="bg-blue-800 px-6 py-3 rounded-r-full sm:rounded-l-none rounded-l-full sm:w-1/3 mt-2 sm:mt-0 hover:bg-blue-900 transition duration-300 font-medium">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-home text-blue-600 text-3xl mr-2"></i>
+                        <span class="text-2xl font-bold">PrimeHomes</span>
+                    </div>
+                    <p class="text-gray-400">Luxury real estate services with a personalized touch. Helping clients find their dream homes since 2010.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#properties" class="text-gray-400 hover:text-white transition duration-300">Properties</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home Buying</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home Selling</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Property Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Investment Properties</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Relocation Services</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-blue-600"></i>
+                            <span>123 Real Estate Avenue, Suite 500<br>Miami, FL 33101</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2 text-blue-600"></i>
+                            <span>(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-blue-600"></i>
+                            <span>info@primehomes.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 PrimeHomes Real Estate. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 transition duration-300 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you, ${name}! Your message has been received. We'll contact you soon at ${email} or ${phone}.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Property card hover effect
+        const propertyCards = document.querySelectorAll('.property-card');
+        
+        propertyCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'all 0.3s ease';
+            });
+        });
+        
+        // Testimonial card hover effect
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        
+        testimonialCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'all 0.3s ease';
+            });
+        });
+    </script>
+</body>
+</html>

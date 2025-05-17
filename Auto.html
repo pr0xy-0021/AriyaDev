@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precision Auto Care - Expert Vehicle Repairs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#f59e0b',
+                        dark: '#1f2937',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1494972308805-463bc619d34e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .contact-form input, .contact-form textarea {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-car text-3xl text-primary mr-2"></i>
+                <h1 class="text-2xl font-bold text-dark">Precision Auto Care</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-dark hover:text-primary font-medium">Home</a>
+                <a href="#services" class="text-dark hover:text-primary font-medium">Services</a>
+                <a href="#about" class="text-dark hover:text-primary font-medium">About Us</a>
+                <a href="#testimonials" class="text-dark hover:text-primary font-medium">Testimonials</a>
+                <a href="#contact" class="text-dark hover:text-primary font-medium">Contact</a>
+            </nav>
+            <button class="md:hidden text-dark text-2xl" id="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full py-4 px-4 shadow-lg" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="text-dark hover:text-primary font-medium">Home</a>
+                <a href="#services" class="text-dark hover:text-primary font-medium">Services</a>
+                <a href="#about" class="text-dark hover:text-primary font-medium">About Us</a>
+                <a href="#testimonials" class="text-dark hover:text-primary font-medium">Testimonials</a>
+                <a href="#contact" class="text-dark hover:text-primary font-medium">Contact</a>
+                <button class="bg-primary text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">
+                    Book Appointment
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero flex items-center justify-center text-white" id="home">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Expert Auto Repair Services</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Your trusted partner for all vehicle maintenance and repair needs. Quality service you can rely on.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="bg-primary hover:bg-blue-700 text-white py-3 px-6 rounded-md text-lg font-medium transition duration-300">
+                    Book Appointment
+                </button>
+                <button class="bg-secondary hover:bg-yellow-600 text-white py-3 px-6 rounded-md text-lg font-medium transition duration-300">
+                    Call Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-gray-50" id="services">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Our Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We offer comprehensive auto repair services to keep your vehicle running smoothly and safely.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md p-6 transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">General Maintenance</h3>
+                    <p class="text-gray-600 mb-4">Regular check-ups to ensure your vehicle stays in top condition and prevent costly repairs.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Oil Changes</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Filter Replacements</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Fluid Checks</span>
+                        </li>
+                    </ul>
+                    <button class="text-primary font-medium hover:underline">Learn More</button>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md p-6 transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-car-crash"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Brake Services</h3>
+                    <p class="text-gray-600 mb-4">Complete brake inspection and repair to ensure your safety on the road.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Brake Pad Replacement</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Rotor Resurfacing</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Brake Fluid Flush</span>
+                        </li>
+                    </ul>
+                    <button class="text-primary font-medium hover:underline">Learn More</button>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md p-6 transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Electrical Systems</h3>
+                    <p class="text-gray-600 mb-4">Diagnosis and repair of all electrical components in your vehicle.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Battery Testing</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Alternator Repair</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Lighting Systems</span>
+                        </li>
+                    </ul>
+                    <button class="text-primary font-medium hover:underline">Learn More</button>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md p-6 transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-tire"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Tire Services</h3>
+                    <p class="text-gray-600 mb-4">Complete tire care including rotation, balancing, and alignment.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Tire Rotation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Wheel Alignment</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Tire Replacement</span>
+                        </li>
+                    </ul>
+                    <button class="text-primary font-medium hover:underline">Learn More</button>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md p-6 transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-fan"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">AC Services</h3>
+                    <p class="text-gray-600 mb-4">Keep your cool with our professional air conditioning services.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>AC Recharge</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Compressor Repair</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>System Diagnostics</span>
+                        </li>
+                    </ul>
+                    <button class="text-primary font-medium hover:underline">Learn More</button>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md p-6 transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-engine"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Engine Repair</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive engine diagnostics and repair services.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Engine Diagnostics</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Timing Belt Replacement</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Major Engine Repair</span>
+                        </li>
+                    </ul>
+                    <button class="text-primary font-medium hover:underline">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="py-16 bg-white" id="about">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1596986952526-3be237187071?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXV0byUyMHJlcGFpcnxlbnwwfHwwfHx8MA%3D%3D" 
+                         alt="Our Auto Repair Shop" 
+                         class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">About Precision Auto Care</h2>
+                    <p class="text-gray-600 mb-6">Founded in 2005, Precision Auto Care has been serving the community with honest, reliable auto repair services for nearly two decades. Our team of ASE-certified technicians is committed to providing the highest quality service at fair prices.</p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-dark mb-4">Why Choose Us?</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary text-xl mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-dark">Certified Technicians</h4>
+                                    <p class="text-gray-600 text-sm">ASE-certified professionals with years of experience</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary text-xl mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-dark">Quality Parts</h4>
+                                    <p class="text-gray-600 text-sm">We use only OEM or high-quality aftermarket parts</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary text-xl mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-dark">Warranty</h4>
+                                    <p class="text-gray-600 text-sm">12-month/12,000-mile warranty on all repairs</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary text-xl mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-dark">Customer Service</h4>
+                                    <p class="text-gray-600 text-sm">Friendly, transparent communication</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-primary bg-opacity-10 p-6 rounded-lg border-l-4 border-primary">
+                        <div class="flex items-start">
+                            <i class="fas fa-quote-left text-primary text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <p class="text-dark italic mb-2">"At Precision Auto Care, we treat your vehicle like it's our own. Our goal is to build long-term relationships based on trust and quality workmanship."</p>
+                                <p class="font-bold text-primary">— Michael Johnson, Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50" id="testimonials">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">What Our Customers Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Don't just take our word for it. Here's what our satisfied customers have to say about their experience.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-primary bg-opacity-20 flex items-center justify-center text-primary text-xl font-bold mr-4">
+                            JD
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-dark">John D.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"I've been taking my cars to Precision Auto Care for years. They're honest, reasonably priced, and do excellent work. I wouldn't trust my vehicles to anyone else."</p>
+                    <div class="text-sm text-gray-500">Brake Service • 2 weeks ago</div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-primary bg-opacity-20 flex items-center justify-center text-primary text-xl font-bold mr-4">
+                            SM
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-dark">Sarah M.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"When my check engine light came on, they diagnosed the issue quickly and explained everything in terms I could understand. Fixed it same day at a fair price. Highly recommend!"</p>
+                    <div class="text-sm text-gray-500">Engine Diagnostics • 1 month ago</div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-primary bg-opacity-20 flex items-center justify-center text-primary text-xl font-bold mr-4">
+                            RT
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-dark">Robert T.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Outstanding service! They went above and beyond to get my car ready for a long road trip. Noticed several potential issues I wasn't even aware of. Very thorough."</p>
+                    <div class="text-sm text-gray-500">Pre-Trip Inspection • 2 months ago</div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button class="bg-primary hover:bg-blue-700 text-white py-3 px-6 rounded-md text-lg font-medium transition duration-300">
+                    Read More Reviews
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-white" id="contact">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Contact Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Have questions or need to schedule service? Reach out to us today.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-dark mb-6">Get In Touch</h3>
+                        
+                        <form class="contact-form space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            
+                            <div>
+                                <label for="service" class="block text-gray-700 font-medium mb-2">Service Needed</label>
+                                <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <option value="">Select a service</option>
+                                    <option value="maintenance">General Maintenance</option>
+                                    <option value="brakes">Brake Services</option>
+                                    <option value="electrical">Electrical Systems</option>
+                                    <option value="tires">Tire Services</option>
+                                    <option value="ac">AC Services</option>
+                                    <option value="engine">Engine Repair</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white py-3 px-6 rounded-md text-lg font-medium transition duration-300">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-bold text-dark mb-6">Our Location</h3>
+                        
+                        <div class="mb-8">
+                            <div class="flex items-start mb-4">
+                                <i class="fas fa-map-marker-alt text-primary text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-dark">Address</h4>
+                                    <p class="text-gray-600">123 Auto Repair Lane<br>Mechanicville, CA 12345</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start mb-4">
+                                <i class="fas fa-phone-alt text-primary text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-dark">Phone</h4>
+                                    <p class="text-gray-600">(555) 123-4567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start mb-4">
+                                <i class="fas fa-envelope text-primary text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-dark">Email</h4>
+                                    <p class="text-gray-600">service@precisionautocare.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-primary text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-dark">Hours</h4>
+                                    <p class="text-gray-600">
+                                        Monday - Friday: 7:30 AM - 6:00 PM<br>
+                                        Saturday: 8:00 AM - 4:00 PM<br>
+                                        Sunday: Closed
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="h-64 rounded-lg overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215373510283!2d-73.98784492452513!3d40.74844097138996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1689870431533!5m2!1sen!2sus" 
+                                    width="100%" 
+                                    height="100%" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Schedule Your Service?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Contact us today to book your appointment or get a free estimate.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="bg-white hover:bg-gray-100 text-primary py-3 px-6 rounded-md text-lg font-medium transition duration-300">
+                    <i class="fas fa-phone-alt mr-2"></i> Call Now
+                </button>
+                <button class="bg-secondary hover:bg-yellow-600 text-white py-3 px-6 rounded-md text-lg font-medium transition duration-300">
+                    <i class="fas fa-calendar-alt mr-2"></i> Book Online
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-car text-2xl text-primary mr-2"></i>
+                        <h3 class="text-xl font-bold">Precision Auto Care</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Your trusted auto repair shop serving the community since 2005.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-xl">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">General Maintenance</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Brake Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Electrical Systems</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Tire Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">AC Services</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for maintenance tips and special offers.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md text-dark w-full focus:outline-none">
+                        <button type="submit" class="bg-primary hover:bg-blue-700 px-4 rounded-r-md">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Precision Auto Care. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Form submission (example)
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would typically send the form data to a server
+                alert('Thank you for your message! We will contact you soon.');
+                this.reset();
+            });
+        }
+        
+        // Booking buttons
+        const bookingButtons = document.querySelectorAll('button:contains("Book Appointment"), button:contains("Book Online")');
+        bookingButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // In a real implementation, this would open a booking modal or page
+                alert('Redirecting to booking system...');
+            });
+        });
+    </script>
+</body>
+</html>

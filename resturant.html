@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Bistro | Fine Dining Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .menu-item:hover .menu-overlay {
+            opacity: 1;
+        }
+        
+        .menu-overlay {
+            transition: opacity 0.3s ease;
+        }
+        
+        .dark .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 scroll-smooth">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-utensils text-3xl text-primary-600 dark:text-primary-400"></i>
+                    <span class="text-2xl font-bold text-primary-600 dark:text-primary-400">Azure Bistro</span>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">Home</a>
+                    <a href="#about" class="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">About</a>
+                    <a href="#menu" class="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">Menu</a>
+                    <a href="#gallery" class="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">Gallery</a>
+                    <a href="#contact" class="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</a>
+                </nav>
+                
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                        <i class="fas fa-moon text-gray-700 dark:text-yellow-300 hidden dark:block"></i>
+                        <i class="fas fa-sun text-yellow-500 dark:hidden block"></i>
+                    </button>
+                    
+                    <button class="md:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition" id="mobile-menu-button">
+                        <i class="fas fa-bars text-gray-700 dark:text-gray-300"></i>
+                    </button>
+                    
+                    <a href="#reservation" class="hidden md:block bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-full font-medium transition shadow-md">
+                        Make Reservation
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="#home" class="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">Home</a>
+                <a href="#about" class="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">About</a>
+                <a href="#menu" class="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">Menu</a>
+                <a href="#gallery" class="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">Gallery</a>
+                <a href="#contact" class="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</a>
+                <a href="#reservation" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-full font-medium transition text-center">
+                    Make Reservation
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">Experience Culinary Excellence</h1>
+                <p class="text-xl text-gray-200 mb-8">Azure Bistro offers a refined dining experience with the freshest ingredients and innovative cuisine in an elegant blue-themed atmosphere.</p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#menu" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-full font-medium transition shadow-lg">
+                        View Our Menu
+                    </a>
+                    <a href="#reservation" class="bg-white hover:bg-gray-100 text-primary-600 px-6 py-3 rounded-full font-medium transition shadow-lg">
+                        Reserve a Table
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl font-bold mb-6 text-primary-600 dark:text-primary-400">Our Story</h2>
+                    <p class="text-lg mb-6">Founded in 2010, Azure Bistro has been serving exceptional cuisine with a focus on seasonal ingredients and innovative flavor combinations. Our chef, with over 20 years of international experience, creates dishes that are both visually stunning and delicious.</p>
+                    <p class="text-lg mb-8">We take pride in our commitment to sustainability, sourcing locally whenever possible and maintaining strong relationships with regional farmers and producers.</p>
+                    <div class="flex space-x-4">
+                        <div class="bg-primary-100 dark:bg-gray-700 p-4 rounded-lg">
+                            <i class="fas fa-leaf text-2xl text-primary-600 dark:text-primary-400 mb-2"></i>
+                            <h3 class="font-bold">Fresh Ingredients</h3>
+                        </div>
+                        <div class="bg-primary-100 dark:bg-gray-700 p-4 rounded-lg">
+                            <i class="fas fa-award text-2xl text-primary-600 dark:text-primary-400 mb-2"></i>
+                            <h3 class="font-bold">Award Winning</h3>
+                        </div>
+                        <div class="bg-primary-100 dark:bg-gray-700 p-4 rounded-lg">
+                            <i class="fas fa-heart text-2xl text-primary-600 dark:text-primary-400 mb-2"></i>
+                            <h3 class="font-bold">Passionate Team</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Restaurant interior" class="rounded-lg shadow-xl w-full">
+                        <div class="absolute -bottom-6 -right-6 bg-primary-600 p-4 rounded-lg shadow-lg hidden md:block">
+                            <h3 class="text-white font-bold text-xl">15+ Years</h3>
+                            <p class="text-white">of Culinary Excellence</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 text-primary-600 dark:text-primary-400">Our Menu</h2>
+                <p class="max-w-2xl mx-auto text-lg">Discover our carefully crafted dishes that blend traditional techniques with modern innovation.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Starters" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-primary-600/30 flex items-center justify-center">
+                            <h3 class="text-3xl font-bold text-white">Starters</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4">
+                            <li class="border-b border-gray-200 dark:border-gray-700 pb-2">
+                                <div class="flex justify-between">
+                                    <span class="font-medium">Blue Crab Cake</span>
+                                    <span class="text-primary-600 dark:text-primary-400">$18</span>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Jumbo lump crab, lemon aioli, micro greens</p>
+                            </li>
+                            <li class="border-b border-gray-200 dark:border-gray-700 pb-2">
+                                <div class="flex justify-between">
+                                    <span class="font-medium">Azure Tuna Tartare</span>
+                                    <span class="text-primary-600 dark:text-primary-400">$22</span>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Sashimi-grade tuna, avocado, sesame oil</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between">
+                                    <span class="font-medium">Burrata Salad</span>
+                                    <span class="text-primary-600 dark:text-primary-400">$16</span>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Heirloom tomatoes, basil, balsamic glaze</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D" alt="Main Courses" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-primary-600/30 flex items-center justify-center">
+                            <h3 class="text-3xl font-bold text-white">Main Courses</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4">
+                            <li class="border-b border-gray-200 dark:border-gray-700 pb-2">
+                                <div class="flex justify-between">
+                                    <span class="font-medium">Filet Mignon</span>
+                                    <span class="text-primary-600 dark:text-primary-400">$42</span>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">8oz prime beef, truffle mashed potatoes</p>
+                            </li>
+                            <li class="border-b border-gray-200 dark:border-gray-700 pb-2">
+                                <div class="flex justify-between">
+                                    <span class="font-medium">Pan-Seared Salmon</span>
+                                    <span class="text-primary-600 dark:text-primary-400">$32</span>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Wild-caught, lemon beurre blanc, asparagus</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between">
+                                    <span class="font-medium">Mushroom Risotto</span>
+                                    <span class="text-primary-600 dark:text-primary-400">$26</span>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Arborio rice, wild mushrooms, parmesan</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=627&q=80" alt="Desserts" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-primary-600/30 flex items-center justify-center">
+                            <h3 class="text-3xl font-bold text-white">Desserts</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4">
+                            <li class="border-b border-gray-200 dark:border-gray-700 pb-2">
+                                <div class="flex justify-between">
+                                    <span class="font-medium">Chocolate Soufflé</span>
+                                    <span class="text-primary-600 dark:text-primary-400">$14</span>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Warm chocolate center, vanilla bean ice cream</p>
+                            </li>
+                            <li class="border-b border-gray-200 dark:border-gray-700 pb-2">
+                                <div class="flex justify-between">
+                                    <span class="font-medium">Crème Brûlée</span>
+                                    <span class="text-primary-600 dark:text-primary-400">$12</span>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Classic vanilla bean with caramelized sugar</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between">
+                                    <span class="font-medium">Blueberry Cheesecake</span>
+                                    <span class="text-primary-600 dark:text-primary-400">$10</span>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">New York style with fresh blueberry compote</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#" class="inline-block border-2 border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 hover:bg-primary-600 hover:text-white px-6 py-3 rounded-full font-medium transition">
+                    View Full Menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 text-primary-600 dark:text-primary-400">Our Gallery</h2>
+                <p class="max-w-2xl mx-auto text-lg">A visual journey through our restaurant and culinary creations.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dining area" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-medium text-lg">Elegant Dining</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Chef preparing food" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-medium text-lg">Chef's Special</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Bar area" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-medium text-lg">Craft Cocktails</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Fresh ingredients" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-medium text-lg">Fresh Ingredients</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1720349234354-949d401a777a?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Outdoor seating" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-medium text-lg">Al Fresco Dining</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1198&q=80" alt="Dessert" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-medium text-lg">Decadent Desserts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-primary-600 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">What Our Guests Say</h2>
+                <p class="max-w-2xl mx-auto text-lg opacity-90">Hear from our satisfied customers about their Azure Bistro experience.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white/10 p-8 rounded-lg backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6 italic">"The food was absolutely incredible! Every dish was a work of art both visually and in taste. The service was impeccable and the ambiance was perfect for our anniversary dinner."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah J." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Sarah J.</h4>
+                            <p class="text-sm opacity-80">Regular Guest</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/10 p-8 rounded-lg backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6 italic">"Azure Bistro never disappoints. The chef's tasting menu was an unforgettable journey of flavors. The wine pairings were spot on and our server was incredibly knowledgeable."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Michael T.</h4>
+                            <p class="text-sm opacity-80">Food Critic</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/10 p-8 rounded-lg backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6 italic">"The attention to detail at Azure Bistro is remarkable. From the moment we walked in, we felt welcomed. The blue crab cake is a must-try and the cocktails are creative and delicious."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jennifer L." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Jennifer L.</h4>
+                            <p class="text-sm opacity-80">First-time Visitor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-gray-50 dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-primary-600 text-white p-12">
+                        <h2 class="text-3xl font-bold mb-6">Make a Reservation</h2>
+                        <p class="mb-8">Reserve your table at Azure Bistro for an unforgettable dining experience. Our team will ensure your visit is nothing short of exceptional.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-phone-alt mr-4"></i>
+                                <span>(555) 123-4567</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope mr-4"></i>
+                                <span>reservations@azurebistro.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt mr-4"></i>
+                                <span>123 Ocean Avenue, Coastal City</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 p-12">
+                        <form class="space-y-6">
+                            <div>
+                                <label for="name" class="block mb-2 font-medium">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-600">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block mb-2 font-medium">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-600">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block mb-2 font-medium">Phone</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-600">
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label for="date" class="block mb-2 font-medium">Date</label>
+                                    <input type="date" id="date" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-600">
+                                </div>
+                                
+                                <div>
+                                    <label for="time" class="block mb-2 font-medium">Time</label>
+                                    <input type="time" id="time" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-600">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="guests" class="block mb-2 font-medium">Number of Guests</label>
+                                <select id="guests" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-600">
+                                    <option>1 person</option>
+                                    <option>2 people</option>
+                                    <option>3 people</option>
+                                    <option>4 people</option>
+                                    <option>5+ people</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-medium transition">
+                                Reserve Now
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 text-primary-600 dark:text-primary-400">Contact Us</h2>
+                <p class="max-w-2xl mx-auto text-lg">We'd love to hear from you. Reach out with any questions or special requests.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary-100 dark:bg-gray-700 p-3 rounded-lg mr-4">
+                                <i class="fas fa-map-marker-alt text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Address</h4>
+                                <p>123 Ocean Avenue<br>Coastal City, CC 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary-100 dark:bg-gray-700 p-3 rounded-lg mr-4">
+                                <i class="fas fa-phone-alt text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Phone</h4>
+                                <p>Reservations: (555) 123-4567<br>General Inquiries: (555) 765-4321</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary-100 dark:bg-gray-700 p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Email</h4>
+                                <p>reservations@azurebistro.com<br>info@azurebistro.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary-100 dark:bg-gray-700 p-3 rounded-lg mr-4">
+                                <i class="fas fa-clock text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Hours</h4>
+                                <p>Monday - Thursday: 5pm - 10pm<br>
+                                Friday - Saturday: 5pm - 11pm<br>
+                                Sunday: 5pm - 9pm</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-200 dark:bg-gray-700 p-3 rounded-full hover:bg-primary-600 hover:text-white transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-gray-200 dark:bg-gray-700 p-3 rounded-full hover:bg-primary-600 hover:text-white transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-gray-200 dark:bg-gray-700 p-3 rounded-full hover:bg-primary-600 hover:text-white transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="contact-name" class="block mb-2 font-medium">Name</label>
+                            <input type="text" id="contact-name" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-600">
+                        </div>
+                        
+                        <div>
+                            <label for="contact-email" class="block mb-2 font-medium">Email</label>
+                            <input type="email" id="contact-email" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-600">
+                        </div>
+                        
+                        <div>
+                            <label for="contact-subject" class="block mb-2 font-medium">Subject</label>
+                            <input type="text" id="contact-subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-600">
+                        </div>
+                        
+                        <div>
+                            <label for="contact-message" class="block mb-2 font-medium">Message</label>
+                            <textarea id="contact-message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-600"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-medium transition">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-utensils text-3xl text-primary-400"></i>
+                        <span class="text-2xl font-bold text-primary-400">Azure Bistro</span>
+                    </div>
+                    <p class="mb-4">Fine dining with a contemporary twist, where every dish tells a story.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-primary-400 transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-primary-400 transition">About Us</a></li>
+                        <li><a href="#menu" class="hover:text-primary-400 transition">Our Menu</a></li>
+                        <li><a href="#gallery" class="hover:text-primary-400 transition">Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-primary-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-white">Opening Hours</h3>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between">
+                            <span>Monday - Thursday</span>
+                            <span>5pm - 10pm</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Friday - Saturday</span>
+                            <span>5pm - 11pm</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sunday</span>
+                            <span>5pm - 9pm</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-white">Newsletter</h3>
+                    <p class="mb-4">Subscribe to our newsletter for updates and special offers.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-primary-400 w-full">
+                        <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2023 Azure Bistro. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-primary-400 transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary-400 transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved user preference
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+        
+        themeToggle.addEventListener('click', function() {
+            html.classList.toggle('dark');
+            
+            // Save user preference
+            if (html.classList.contains('dark')) {
+                localStorage.setItem('color-theme', 'dark');
+            } else {
+                localStorage.setItem('color-theme', 'light');
+            }
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
